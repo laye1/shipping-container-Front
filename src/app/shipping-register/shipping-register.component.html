@@ -1,0 +1,39 @@
+
+<form  (ngSubmit) = "onSubmit()" class="row g-3 f">
+
+  <div class="col-md-6">
+    <label for="inputEmail4"  class="form-label">Country Origin</label>
+    <input type="text"  [(ngModel)] ="shipping.countryFrom" name="countryFrom" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Type of Service</label>
+    <input type="text" [(ngModel)] ="shipping.serviceType" name="serviceType" class="form-control" id="inputEmail">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Move Date</label>
+    <input type="date" [(ngModel)] ="shipping.moveDate" name="moveDate" class="form-control" id="inputEmail5">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4"  class="form-label">Move Size</label>
+    <input type="text" [(ngModel)] ="shipping.moveSize" name="moveSize"  class="form-control" id="inputCity1">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Country Land</label>
+    <input type="text" [(ngModel)] ="shipping.countryTo" name="countryTo" class="form-control" id="inputCity">
+  </div>
+  <div class="col-md-4">
+    <label for="inputCity" class="form-label">City Land</label>
+    <input type="text" [(ngModel)] ="shipping.cityTo" name="cityTo" class="form-control" id="inputCity2">
+  </div>
+
+  <div class="col-md-2">
+    <label for="inputZip"  class="form-label">Zip</label>
+    <input type="text" [(ngModel)] ="shipping.zip" name="zip" class="form-control" id="inputZip">
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" > SAVE</button>
+  </div>
+
+</form>

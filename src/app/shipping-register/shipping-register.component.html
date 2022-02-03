@@ -1,39 +1,66 @@
 
+
+<div class="col-md-6  offset-md-3"><br><br>
 <form  (ngSubmit) = "onSubmit()" class="row g-3 f">
 
   <div class="col-md-6">
-    <label for="inputEmail4"  class="form-label">Country Origin</label>
-    <input type="text"  [(ngModel)] ="shipping.countryFrom" name="countryFrom" class="form-control" id="inputEmail4">
+    <label for="inputEmail5"  class="form-label">Country Origin</label>
+    <select class="form-select" [(ngModel)] ="shipping.countryFrom" name="countryFrom" aria-label="Default select example" required>
+      <option selected  ></option>
+      <option value="Senegal">Senegal</option>
+      <option value="Gambie">Gambie</option>
+      <option value="Mali">Mali</option>
+    </select>
+
   </div>
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Type of Service</label>
-    <input type="text" [(ngModel)] ="shipping.serviceType" name="serviceType" class="form-control" id="inputEmail">
+    <label for="inputEmail5" class="form-label">Type of Service</label>
+
+    <select class="form-select" [(ngModel)] ="shipping.serviceType" name="serviceType" aria-label="Default select example" >
+      <option selected  ></option>
+      <option value="full packing and loading">full packing and loading</option>
+      <option value="partial packing and loading">partial packing and loading</option>
+      <option value="loading">loading</option>
+    </select>
+
   </div>
 
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Move Date</label>
-    <input type="date" [(ngModel)] ="shipping.moveDate" name="moveDate" class="form-control" id="inputEmail5">
+    <label for="inputEmail5" class="form-label">Move Date</label>
+    <input type="date" [(ngModel)] ="shipping.moveDate" name="moveDate" class="form-control" id="inputEmail5" required>
   </div>
   <div class="col-md-6">
-    <label for="inputEmail4"  class="form-label">Move Size</label>
-    <input type="text" [(ngModel)] ="shipping.moveSize" name="moveSize"  class="form-control" id="inputCity1">
+    <label for="inputEmail5"  class="form-label">Move Size</label>
+    <input type="text" [(ngModel)] ="shipping.moveSize" name="moveSize"  class="form-control" id="inputCity1" required>
   </div>
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Country Land</label>
-    <input type="text" [(ngModel)] ="shipping.countryTo" name="countryTo" class="form-control" id="inputCity">
+    <label for="inputCity1" class="form-label">Country Land</label>
+    <select class="form-select" [(ngModel)] ="shipping.countryTo" name="countryTo" aria-label="Default select example">
+      <option selected  ></option>
+      <option value="France">France</option>
+      <option value="Italie">Italie</option>
+      <option value="Belgique">Belgique</option>
+    </select>
   </div>
   <div class="col-md-4">
-    <label for="inputCity" class="form-label">City Land</label>
-    <input type="text" [(ngModel)] ="shipping.cityTo" name="cityTo" class="form-control" id="inputCity2">
+
+    <label for="inputCity1"   class="form-label">City Land</label>
+
+    <input type="text" [(ngModel)] ="shipping.cityTo" name="cityTo"  class="form-control" id="inputCity1" required>
+
   </div>
+
 
   <div class="col-md-2">
     <label for="inputZip"  class="form-label">Zip</label>
-    <input type="text" [(ngModel)] ="shipping.zip" name="zip" class="form-control" id="inputZip">
+
+
+    <input type="text" [(ngModel)] ="shipping.zip" name="zip" class="form-control" id="inputZip" required>
   </div>
 
   <div class="col-12">
-    <button type="submit" class="btn btn-primary" > SAVE</button>
+    <button type="submit"  class="ui green button">SAVE</button>
   </div>
 
 </form>
+</div>

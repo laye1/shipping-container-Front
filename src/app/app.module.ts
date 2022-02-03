@@ -8,12 +8,22 @@ import { HomeComponent } from './home/home.component';
 import {RestApiService} from "./rest-api.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { ShippingCostComponent } from './shipping-cost/shipping-cost.component';
+import {AuthGuardService} from "./auth-guard.service";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ShippingRegisterComponent,
-    HomeComponent
+    HomeComponent,
+    UserRegistrationComponent,
+    LoginComponent,
+    HeaderComponent,
+    ShippingCostComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +31,7 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     FormsModule
   ],
-  providers: [RestApiService],
+  providers: [RestApiService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

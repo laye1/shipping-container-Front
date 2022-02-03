@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Shipping} from "../shipping";
 import {RestApiService} from "../rest-api.service";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-shipping-register',
@@ -11,7 +13,8 @@ export class ShippingRegisterComponent implements OnInit {
 
   shipping:Shipping = new Shipping();
 
-  constructor(private restApiService:RestApiService) { }
+
+  constructor(private restApiService:RestApiService,private  route:Router) { }
 
   ngOnInit(): void {
   }
@@ -19,13 +22,20 @@ export class ShippingRegisterComponent implements OnInit {
 saveShip(){
     this.restApiService.createdShip(this.shipping).subscribe(data =>{
       console.log(data);
+      alert("Registration Successfull");
+      this.route.navigate(["ship-cost"]);
+
+
     },
-      error => console.log(error));
+      error => alert("Error"));
 }
 
   onSubmit() {
-   console.log(this.shipping);
-   this.saveShip()
+   this.saveShip();
+
+
 
   }
+
+
 }

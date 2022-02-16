@@ -1,5 +1,5 @@
-
-export class Shipping {
+export class ListShipping {
+  id:number=0;
   countryFrom: String ='';
   countryTo:String ='';
   cityTo:String ='';
@@ -7,6 +7,5 @@ export class Shipping {
   serviceType:String ='';
   moveSize:String ='';
   moveDate: String ='';
-
 
 }

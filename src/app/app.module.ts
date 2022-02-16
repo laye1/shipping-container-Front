@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { ShippingCostComponent } from './shipping-cost/shipping-cost.component';
 import {AuthGuardService} from "./auth-guard.service";
+import { AdminDasboardComponent } from './admin-dasboard/admin-dasboard.component';
+import { UpdateShippingComponent } from './update-shipping/update-shipping.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import {AuthGuardService} from "./auth-guard.service";
     UserRegistrationComponent,
     LoginComponent,
     HeaderComponent,
-    ShippingCostComponent
+    ShippingCostComponent,
+    AdminDasboardComponent,
+    UpdateShippingComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {User} from "./user";
 import {map} from "rxjs/operators";
 import {Router} from "@angular/router";
+import {ListShipping} from "./list-shipping";
 
 
 
@@ -18,19 +19,21 @@ export class RestApiService {
   public email: String='';
   public password: String='';
 
-private  shipURL = "http://localhost:5000/api/register/ship";
-  private  shipURL1 = "http://localhost:8765/shipping-container/api/register/ship";
-private  registerURL = "http://localhost:5000/api/register";
-  private  registerURL1 = "http://localhost:8765/shipping-container/api/register";
-private  loginURL ="http://localhost:5000/"
-  private  loginURL1 ="http://localhost:8765/shipping-container/"
-private  costURL = "http://localhost:8001/"
+  private  registerShipURL = "http://localhost:5000/api/ship/register";
+
+  private  registerURL = "http://localhost:5000/api/register";
+  private  shipsUrl = "http://localhost:5000/api/ship";
+
+
+  private  costURL = "http://localhost:8081";
+  private  shipAdminUrl = "http://localhost:5000/api/admin/ship";
+
 
 
   constructor( private http:HttpClient,private router:Router) {}
 
   createdShip(shipping: Shipping):Observable<Object> {
-   return  this.http.post(`${this.shipURL}`, shipping);
+   return  this.http.post(`${this.registerShipURL}`, shipping);
   }
 
   userRegister(user: User):Observable<Object> {
@@ -39,7 +42,7 @@ private  costURL = "http://localhost:8001/"
 
   public login(email: string, password: string){
 
-    return this.http.get(`http://localhost:5000/`,
+    return this.http.get(`http://localhost:5000`,
       { headers: { authorization: this.createBasicAuthToken(email, password) },responseType: 'text' as 'json'}).pipe(map((res) => {
       this.email = email;
       this.password = password;
@@ -81,6 +84,28 @@ private  costURL = "http://localhost:8001/"
   public getCost():Observable<String[]>{
 
     return this.http.get<String[]>(`${this.costURL}`);
+  }
+
+  public  getShipping():Observable<ListShipping[]>{
+
+    return this.http.get<ListShipping[]>(`${this.shipsUrl}`);
+
+  }
+
+  getShipById(id:number):Observable<Shipping>{
+
+    return this.http.get<Shipping>(`${this.shipAdminUrl}/${id}`);
+
+  }
+
+  updateShip(id:number,shipping: Shipping):Observable<Object> {
+    return  this.http.put(`${this.shipAdminUrl}/${id}`, shipping);
+  }
+
+  deleteShip(id:number):Observable<Object>{
+
+    return this.http.delete(`${this.shipAdminUrl}/${id}`);
+
   }
 
 

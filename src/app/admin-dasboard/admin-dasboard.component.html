@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="col-md-6  offset-md-3"><br><br>
+    <h1>List of Shippings</h1>
+
+    <table class="table  table-success">
+
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">countryFrom</th>
+        <th scope="col">countryLand</th>
+        <th scope="col">cityLand</th>
+        <th scope="col">serviceType</th>
+        <th scope="col">Zip</th>
+        <th scope="col">moveSize</th>
+        <th scope="col">moveDate</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor=" let shippings of listShippings">
+        <th scope="row">{{shippings.id}}</th>
+        <td>{{shippings.countryFrom}}</td>
+        <td>{{shippings.countryTo}}</td>
+        <td>{{shippings.cityTo}}</td>
+        <td>{{shippings.serviceType}}</td>
+        <td>{{shippings.zip}}</td>
+        <td>{{shippings.moveSize}}</td>
+        <td>{{shippings.moveDate}}</td>
+        <td>
+          <button (click)="updateShip(shippings.id)" class="btn btn-info">UPDATE</button>
+          <button (click)="deleteShip(shippings.id)" class="btn btn-danger" style="margin-left: 12px">DELETE</button>
+        </td>
+
+
+
+      </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
